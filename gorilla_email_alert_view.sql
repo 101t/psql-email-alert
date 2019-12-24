@@ -93,7 +93,7 @@ BEGIN
 	INTO _created_date, _year, _month, _customer_age, _customer_gender, _country, _state, _product_category, _sub_category, _quantity, _unit_cost, _unit_price, _cost, _revenue
 	FROM sales
 	WHERE customer_age = 20;
-	SELECT sendEmail('mamountawakol@std.sehir.edu.tr', 'Mamtkl-123456', 'smtp.gmail.com', 587, 'tarek.kalaji@boraq-group.com', 'Sending E-mail from PostgreSQL', _created_date, _year, _month, _customer_age, 
+	SELECT sendEmail('EMAIL@', 'YOUR PASSWORD', 'smtp.gmail.com', 587, 'RECEIVER', 'SUBJECT', _created_date, _year, _month, _customer_age, 
 					 _customer_gender, _country, _state, _product_category, _sub_category, _quantity, _unit_cost, _unit_price, _cost, _revenue); 
 END $$;
 
