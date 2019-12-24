@@ -14,4 +14,11 @@ grant all privileges on database gorilladb to postgres;
 \q
 ```
 
-4. create view ...
+4. instal pl/python, run the following command: 
+        sudo apt-get install -y postgresql-plpython3
+    - then go to gorilladb and type run:
+        CREATE OR REPLACE LANGUAGE plpython3u;
+
+
+5. create view selecting the data fields needed from the table (sales)
+
