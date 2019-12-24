@@ -1,19 +1,19 @@
 -- Create Table called sales
 CREATE TABLE sales (
-	created_date date,
+	created_date varchar(24),
 	year smallint,
 	month char(24),
 	customer_age smallint,
 	customer_gender char(1),
-	country char(32),
-	state char(24),
-	product_category char(64),
-	sub_category char(64),
+	country varchar(32),
+	state varchar(24),
+	product_category varchar(64),
+	sub_category varchar(64),
 	quantity integer,
 	unit_cost numeric,
 	unit_price numeric,
 	cost numeric,
-	revenue numeric,
+	revenue numeric
 );
 -- Copy CSV data into table
-COPY sales FROM './sales_table.csv' with (format csv, encoding 'win1252', header false, null '', quote '"'); -- , force_null ()
+COPY sales (created_date, year, month, customer_age, customer_gender, country, state, product_category, sub_category, quantity, unit_cost, unit_price, cost, revenue) FROM './sales_table.csv' with CSV HEADER
