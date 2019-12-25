@@ -1,1 +1,1 @@
-0 1,13 * * * root /bin/sh /home
+0 1,13 * * * root /bin/sh /opt/psql-email-alert/main.sh

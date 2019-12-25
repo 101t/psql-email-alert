@@ -1,1 +1,1 @@
-psql -h localhost -d gorilladb -U postgres -p 5432 -a -q -f ./gorilla_email_alert_view.sql
+psql -h localhost -d gorilladb -U postgres -p 5432 -a -q -f /opt/psql-email-alert/gorilla_email_alert_view.sql

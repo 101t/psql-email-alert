@@ -16,4 +16,4 @@ CREATE TABLE sales (
 	revenue numeric
 );
 -- Copy CSV data into table
-COPY sales (created_date, year, month, customer_age, customer_gender, country, state, product_category, sub_category, quantity, unit_cost, unit_price, cost, revenue) FROM './sales_table.csv' with CSV HEADER
+COPY sales (created_date, year, month, customer_age, customer_gender, country, state, product_category, sub_category, quantity, unit_cost, unit_price, cost, revenue) FROM '/opt/psql-email-alert/sales_table.csv' with CSV HEADER
