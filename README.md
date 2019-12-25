@@ -1,4 +1,4 @@
-# Working with Gorilla
+# Gorilla
 
 This is an example of Email alert using PostgreSQL with PL/Python inside.
 
@@ -16,7 +16,7 @@ grant all privileges on database gorilladb to postgres;
 
 4. instal pl/python, run the following command:
 ```sh
-sudo apt-get install -y postgresql-plpython3
+sudo apt-get install -y postgresql-plpython3-*
 ```
 then go to gorilladb and type run:
 ```sql
