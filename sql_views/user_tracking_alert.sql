@@ -1,6 +1,6 @@
 CREATE OR REPLACE VIEW v_users AS
 
-SELECt  a.id user_id,
+SELECT  a.id user_id,
 	a.login user_login,
 	a.active user_active,
 	b.id partner_id,
