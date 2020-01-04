@@ -13,7 +13,7 @@ MESSAGE_TEMPLATE = """
 	<h4> Hello There,</h4>
 	<p> 
     This email is an alert for <b>CRM Activities Tracking View.</b> <br> 
-    Please check the bellow table, 
+    Please check the table below,
     </p>
 	<br>
 	<table  style="border: 1px solid #ddd;border-collapse: collapse;">
@@ -57,7 +57,7 @@ for i in range(len(_activity_id)):
 
 	MESSAGE_TEMPLATE = MESSAGE_TEMPLATE + "</tr>"
 MESSAGE_TEMPLATE = MESSAGE_TEMPLATE + "</table>"
-MESSAGE_TEMPLATE = MESSAGE_TEMPLATE + "<p>" + "Bests," + "</p>"
+MESSAGE_TEMPLATE = MESSAGE_TEMPLATE + "<p>" + "Best regards," + "</p>"
 
 message = MESSAGE_TEMPLATE
 part = MIMEText(message, 'html')
@@ -97,4 +97,4 @@ BEGIN
 	SELECT sendEmail('SENDER@', 'PASSWORD OR APP_PASSWORD', 'smtp.PROVIDER.com', 587, 'RECIEVER', 'CRM Activities Tracking Alert', 
 					 _activity_id, _activity_status, _activity_type, _lead_id, _lead_name, _activity, _activity_note, _assigned_to, _assigned_on, _due_on, _done_on); 
 END $$;
-SELECT * FROM v_crm_activities;
+--SELECT * FROM v_crm_activities;

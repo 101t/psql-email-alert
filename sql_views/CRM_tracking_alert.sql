@@ -9,7 +9,7 @@ SELECT a.id                  activity_id,
        c.id                                                                           lead_id,
        c.name                                                                         lead_name,
        a.summary                                                                      activity,
-       regexp_replace(regexp_replace(a.note, e'<.*?>', '', 'g' ), e'&nbsp;', '', 'g') activity_note,
+       REGEXP_REPLACE(REGEXP_REPLACE(a.note, e'<.*?>', '', 'g' ), e'&nbsp;', '', 'g') activity_note,
        d.partner_name                                                                 assigned_to,
        a.create_date::date                                                            assigned_on,
        a.date_deadline                                                                due_on,
@@ -28,7 +28,7 @@ SELECT a.id                                                                     
        c.name                                                                                                                      activity_type,
        b.id                                                                                                                        lead_id,
        b.name                                                                                                                      lead_name,
-       replace(replace(regexp_replace(regexp_replace(a.body, e'<.*?>', '', 'g' ), e'&nbsp;', '', 'g'),' ',''),'             ','') activity,
+       REPLACE(REPLACE(REGEXP_REPLACE(REGEXP_REPLACE(a.body, e'<.*?>', '', 'g' ), e'&nbsp;', '', 'g'),' ',''),'             ','') activity,
        ''::text                                                                                                                    activity_note,
        d.partner_name                                                                                                              done_by,
        NULL                                                                                                                        assigned_on,
@@ -42,6 +42,7 @@ WHERE  a.res_id = b.id
 AND    a.author_id = d.partner_id
 AND    a.mail_activity_type_id = c.id;
        --and a.record_name = 'ENGIE | Italy ERP'
+
 CREATE OR REPLACE VIEW v_crm_tracking_alert AS
 SELECT   a.id                    lead_id,
          b.name                  lead_stage,
@@ -127,4 +128,4 @@ ORDER BY b.name = 'New Leads' DESC,
          b.name = 'Qualified Opportunity' DESC,
          b.name = 'Negotiation' DESC,
          b.name = 'Won' DESC,
-         b.name = 'Lost' DESC 
+         b.name = 'Lost' DESC;

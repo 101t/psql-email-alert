@@ -13,7 +13,7 @@ MESSAGE_TEMPLATE = """
 	<h4> Hello there,</h4>
     <p> 
     This email is an alert for <b>Task Tracking View.<b> <br> 
-    Please check the bellow table, 
+    Please check the table below, 
     </p>	
     <br>
 	<table  style="border: 1px solid #ddd;border-collapse: collapse;">
@@ -55,7 +55,7 @@ for i in range(len(_project_id)):
 
 	MESSAGE_TEMPLATE = MESSAGE_TEMPLATE + "</tr>"
 MESSAGE_TEMPLATE = MESSAGE_TEMPLATE + "</table>"
-MESSAGE_TEMPLATE = MESSAGE_TEMPLATE + "<p>" + "Bests," + "</p>"
+MESSAGE_TEMPLATE = MESSAGE_TEMPLATE + "<p>" + "Best regards," + "</p>"
 
 message = MESSAGE_TEMPLATE
 part = MIMEText(message, 'html')
@@ -92,4 +92,4 @@ BEGIN
 	SELECT sendEmail('SENDER@', 'PASSWORD OR APP_PASSWORD', 'smtp.PROVIDER.com', 587, 'RECIEVER', 'TEST EMAIL', 
 					 _project_id, _project_name, _task_id, _task_name, _assigned_on, _assigned_by, _assigned_to, _deadline_on, _priority, _status); 
 END $$;
-SELECT * FROM v_tasks_tracking;
+--SELECT * FROM v_tasks_tracking;

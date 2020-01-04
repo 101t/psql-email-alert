@@ -11,7 +11,10 @@ from email.mime.text import MIMEText
 
 MESSAGE_TEMPLATE = """
 	<h4> Hello there,</h4>
-	<p> This is a test email...</p>
+	<p> 
+	This email is an alert for <b>CRM Tracking View.</b> <br>
+	Please check the table below,
+	</p>
 	<br>
 	<table  style="border: 1px solid #ddd;border-collapse: collapse;">
 		<tr>
@@ -52,7 +55,7 @@ for i in range(len(_lead_id)):
 
 	MESSAGE_TEMPLATE = MESSAGE_TEMPLATE + "</tr>"
 MESSAGE_TEMPLATE = MESSAGE_TEMPLATE + "</table>"
-MESSAGE_TEMPLATE = MESSAGE_TEMPLATE + "<p>" + "Bests," + "</p>"
+MESSAGE_TEMPLATE = MESSAGE_TEMPLATE + "<p>" + "Best regards," + "</p>"
 
 message = MESSAGE_TEMPLATE
 part = MIMEText(message, 'html')

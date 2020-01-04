@@ -1,4 +1,4 @@
-REATE OR REPLACE VIEW v_tasks_tracking AS 
+CREATE OR REPLACE VIEW v_tasks_tracking AS 
 
 SELECT b.id project_id,
    c.name project_name,
